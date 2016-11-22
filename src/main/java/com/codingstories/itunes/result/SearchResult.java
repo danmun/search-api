@@ -12,9 +12,11 @@ public class SearchResult {
     private String trackContentRating;
     private String version;
     private String price;
+    private String formattedPrice;
     private String description;
     private String averageUserRating;
     private String userRatingCount;
+    private String currentVersionReleaseDate;
     
     private String wrapperType;
     private String explicitness;
@@ -32,7 +34,7 @@ public class SearchResult {
         this.artworkUrl100 = artworkUrl100;
     }
 
-    public void setArtowrkUrl512(String artworkUrl512) {
+    public void setArtworkUrl512(String artworkUrl512) {
         this.artworkUrl512 = artworkUrl512;
     }
 
@@ -68,6 +70,23 @@ public class SearchResult {
         this.userRatingCount = userRatingCount;
     }
 
+    public String getFormattedPrice() {
+        return formattedPrice;
+    }
+
+    public String getCurrentVersionReleaseDate() {
+        return currentVersionReleaseDate;
+    }
+
+    public void setFormattedPrice(String formattedPrice) {
+        this.formattedPrice = formattedPrice;
+    }
+
+    public void setCurrentVersionReleaseDate(String currentVersionReleaseDate) {
+        this.currentVersionReleaseDate = currentVersionReleaseDate;
+    }
+
+    
     
     
     public String getArtworkUrl100() {
@@ -229,6 +248,8 @@ public class SearchResult {
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
         if (averageUserRating != null ? !averageUserRating.equals(that.averageUserRating) : that.averageUserRating != null) return false;
         if (userRatingCount != null ? !userRatingCount.equals(that.userRatingCount) : that.userRatingCount != null) return false;
+        if (formattedPrice != null ? !formattedPrice.equals(that.formattedPrice) : that.formattedPrice != null) return false;
+        if (currentVersionReleaseDate != null ? !currentVersionReleaseDate.equals(that.currentVersionReleaseDate) : that.currentVersionReleaseDate != null) return false;
 
         return true;
     }
@@ -257,6 +278,8 @@ public class SearchResult {
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (averageUserRating != null ? averageUserRating.hashCode() : 0);
         result = 31 * result + (userRatingCount != null ? userRatingCount.hashCode() : 0);
+        result = 31 * result + (currentVersionReleaseDate != null ? currentVersionReleaseDate.hashCode() : 0);
+        result = 31 * result + (formattedPrice != null ? formattedPrice.hashCode() : 0);
         return result;
     }
 
@@ -270,6 +293,7 @@ public class SearchResult {
                 ", trackContentRating='" + trackContentRating + '\'' +
                 ", version='" + version + '\'' +
                 ", price='" + price + '\'' +
+                ", formattedPrice='" + formattedPrice + '\'' +
                 ", description='" + description + '\'' +
                 ", averageUserRating='" + averageUserRating + '\'' +
                 ", userRatingCount='" + userRatingCount + '\'' +
@@ -284,6 +308,7 @@ public class SearchResult {
                 ", trackId='" + trackId + '\'' +
                 ", collectionId='" + collectionId + '\'' +
                 ", releaseDate='" + releaseDate + '\'' +
+                ", currentVerReleaseDate='" + currentVersionReleaseDate + '\'' +
                 '}';
     }
 }
